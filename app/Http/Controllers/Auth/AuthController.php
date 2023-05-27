@@ -25,6 +25,8 @@ class AuthController extends Controller
                 return redirect()->route('admin.home');
             } elseif ($user->role == 'manager') {
                 return redirect()->route('manager.home');
+            } elseif ($user->role == 'user') {
+                return redirect()->route('landingPage');
             } else {
                 return redirect()->route('home');
             }
@@ -48,6 +50,8 @@ class AuthController extends Controller
                 return redirect()->route('admin.home');
             } elseif ($user->role == 'manager') {
                 return redirect()->route('manager.home');
+            } elseif ($user->role == 'user') {
+                return redirect()->route('landingPage');
             } else {
                 return redirect()->route('home');
             }
@@ -74,6 +78,8 @@ class AuthController extends Controller
                 return redirect()->route('admin.home');
             } elseif ($user->role == 'manager') {
                 return redirect()->route('manager.home');
+            } elseif ($user->role == 'user') {
+                return redirect()->route('landingPage');
             } else {
                 return redirect()->route('home');
             }
@@ -87,6 +93,8 @@ class AuthController extends Controller
                 return redirect()->route('admin.home')->withSuccess('You have successfully logged in as admin.');
             } elseif ($user->role == 'manager') {
                 return redirect()->route('manager.home')->withSuccess('You have successfully logged in as manager.');
+            } elseif ($user->role == 'user') {
+                return redirect()->route('landingPage');
             } else {
                 return redirect()->route('home')->withSuccess('You have successfully logged in.');
             }
@@ -123,7 +131,7 @@ class AuthController extends Controller
      */
     public function dashboard()
     {
-        if(Auth::check()){
+        if (Auth::check()) {
             return view('dashboard');
         }
 
@@ -137,11 +145,11 @@ class AuthController extends Controller
      */
     public function create(array $data)
     {
-      return User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password'])
-      ]);
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password'])
+        ]);
     }
 
     /**
@@ -149,7 +157,8 @@ class AuthController extends Controller
      *
      * @return response()
      */
-    public function logout() {
+    public function logout()
+    {
         Session::flush();
         Auth::logout();
 
