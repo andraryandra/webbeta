@@ -20,9 +20,6 @@
                                     href="/partnership">Partnership</a>
                             </li>
                             <li>
-                                <a class="{{ request()->routeIs('event') ? 'active' : '' }}" href="/event">Event</a>
-                            </li>
-                            <li>
                                 <a href="#">Register</a>
                                 <ul class="nav-dropdown nav-submenu">
                                     <li><a href="/daftarmitra">Daftar mitra sanggar</a></li>

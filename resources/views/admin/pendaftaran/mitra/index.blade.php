@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('mitra')
+@section('daftarmitra')
     <div class="page-heading">
         <div class="page-title">
             <div class="row">
@@ -29,22 +29,35 @@
                                 <th>ID</th>
                                 <th>Nama</th>
                                 <th>Email</th>
+                                <th>Alamat</th>
+                                <th>No Wa</th>
+                                <th>Dokumentasi Sanggar</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $s)
+                            @foreach ($pendaftar as $mitra)
                                 <tr>
-                                    <td>{{ $s->id }}</td>
-                                    <td>{{ $s->name }} </td>
-                                    <td>{{ $s->email }}</td>
+                                    <td>{{ $mitra->id }}</td>
+                                    <td>{{ $mitra->nama }}</td>
+                                    <td>{{ $mitra->email }}</td>
+                                    <td>{{ $mitra->alamat }}</</td>
+                                    <td>{{ $mitra->No_Wa }}</</td>
+                                    <td>{{ $mitra->Dokumentasi }}</</td>
                                     <td>
-                                        <span class="badge bg-success">Active</span>
+                                        {{ $mitra->validasi ? 'Tervalidasi' : 'Belum Tervalidasi' }}
+                                        @if(!$mitra->validasi)
+                                        <form method="POST" action="{{ route('daftarmitra.validasi', $mitra->id) }}">
+                                        @csrf
+                                        @method('PUT')
+                                        <button type="submit">Validasi</button>
+                                        </form>
+                                        @endif
                                     </td>
                                     <td>
-                                        <a href="{{ route('mitra.edit', $s->id) }}" class="btn btn-primary">Edit</a>
-                                        <form action="{{ route('mitra.destroy', $s->id) }}" method="POST" class="d-inline">
+                                        <a href="" class="btn btn-primary">Edit</a>
+                                        <form action="" method="POST" class="d-inline">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger"
@@ -52,7 +65,7 @@
                                         </form>
                                     </td>
                                 </tr>
-                            @endforeach
+                                @endforeach
                         </tbody>
                     </table>
                 </div>

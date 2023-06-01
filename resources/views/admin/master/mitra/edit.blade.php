@@ -1,14 +1,14 @@
 @extends('layouts.dashboard')
-@section('user')
+@section('mitra')
     <div class="row">
         <div class="col-12 col-md-6 order-md-1 order-last">
-            <h3>Tambah User</h3>
+            <h3>Tambah mitra</h3>
             <p class="text-subtitle text-muted">Tambah User ke Database</p>
         </div>
         <div class="col-12 col-md-6 order-md-2 order-first">
             <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/user">User</a></li>
+                    <li class="breadcrumb-item"><a href="/mitra">Mitra</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Tambah</li>
                 </ol>
             </nav>
@@ -20,11 +20,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Tambah User</h4>
+                        <h4 class="card-title">Tambah Mitra</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" action="{{ route('user.update', $user->id) }}" method="POST">
+                            <form class="form" action="{{ route('mitra.update', $user->id) }}" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="row">
@@ -42,16 +42,6 @@
                                             <input type="email" class="form-control" placeholder="Masukan Email"
                                                 id="email" name="email" required
                                                 value="{{ old('EMAIL', isset($user) ? $user->email : '') }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="role-column">Role</label>
-                                            <select class="form-select" name="role" id="role" required >
-                                                <option value="1">Admin</option>
-                                                <option value="2">Manager</option>
-                                                <option value="0">User</option>
-                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">

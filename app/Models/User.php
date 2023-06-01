@@ -48,7 +48,9 @@ class User extends Authenticatable
 protected function role(): Attribute
 {
     return new Attribute(function ($value) {
-        return ["user", "admin", "manager"][$value];
+        $roles = ["user", "admin", "manager"];
+        $index = $value >= 0 && $value < count($roles) ? $value : 0;
+        return $roles[$index];
     });
 }
 

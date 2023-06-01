@@ -1,8 +1,8 @@
 @extends('layouts.dashboard')
-@section('user')
+@section('daftarmitra')
     <div class="row">
         <div class="col-12 col-md-6 order-md-1 order-last">
-            <h3>Tambah User</h3>
+            <h3>Tambah Daftar Mitra</h3>
             <p class="text-subtitle text-muted">Tambah User ke Database</p>
         </div>
         <div class="col-12 col-md-6 order-md-2 order-first">
@@ -24,41 +24,50 @@
                     </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <form class="form" action="{{ route('user.update', $user->id) }}" method="POST">
+                            <form class="form" action="{{ route('daftarmitra.store') }}" method="POST">
                                 @csrf
-                                @method('PUT')
                                 <div class="row">
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="first-name-column">Name</label>
                                             <input type="text" class="form-control" placeholder="First Name"
-                                                id="name" name="name" required
-                                                value="{{ old('name', isset($user) ? $user->name : '') }}">
+                                                id="name" name="name" required {{-- value="{{ old('name', isset($user) ? $user->name : '') }}" --}}>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="last-name-column">Email</label>
                                             <input type="email" class="form-control" placeholder="Masukan Email"
-                                                id="email" name="email" required
-                                                value="{{ old('EMAIL', isset($user) ? $user->email : '') }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="role-column">Role</label>
-                                            <select class="form-select" name="role" id="role" required >
-                                                <option value="1">Admin</option>
-                                                <option value="2">Manager</option>
-                                                <option value="0">User</option>
-                                            </select>
+                                                id="email" name="email" required {{-- value="{{ old('EMAIL', isset($user) ? $user->email : '') }}" --}}>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-12">
                                         <div class="form-group">
                                             <label for="password-column">Password</label>
                                             <input type="password" id="password" class="form-control" name="password"
-                                                placeholder="Masukan Password" type="password">
+                                                placeholder="Masukan Password" type="password" required
+                                                {{-- value="{{ old('password', isset($user) ? $user->password : '') }}" --}}>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="first-name-column">Alamat</label>
+                                            <input type="text" class="form-control" placeholder="Alamat Sanggar"
+                                                id="alamat" name="alamat" required {{-- value="{{ old('name', isset($user) ? $user->name : '') }}" --}}>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="first-name-column">No Wa</label>
+                                            <input type="number" class="form-control" placeholder="Masukan No Wa"
+                                                id="nowa" name="nowa" required {{-- value="{{ old('name', isset($user) ? $user->name : '') }}" --}}>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="first-name-column">Dokumentasi</label>
+                                            <input type="file" class="form-control" placeholder="Masukan Dokumentasi"
+                                                id="dokumentasi" name="dokumentasi" required {{-- value="{{ old('name', isset($user) ? $user->name : '') }}" --}}>
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex justify-content-end">

@@ -49,6 +49,20 @@
                                                 {{-- value="{{ old('password', isset($user) ? $user->password : '') }}" --}}>
                                         </div>
                                     </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-group">
+                                            <label for="role-column">Role</label>
+                                            <select class="form-select" name="role" id="role" required>
+                                                <option selected disabled>Select Role Name</option>
+                                                <option value="1">Admin</option>
+                                                <option value="2">Manager</option>
+                                                <option value="0">User</option>
+                                            </select>
+                                            {{-- <input type="role" id="role" class="form-control" name="role"
+                                                placeholder="Pilih Role" type="role" required
+                                                {{-- value="{{ old('password', isset($user) ? $user->password : '') }}" --}}
+                                        </div>
+                                    </div>
                                     <div class="col-12 d-flex justify-content-end">
                                         <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                                     </div>

@@ -1,3 +1,5 @@
+@extends('layouts.dashboard')
+@section('sidebar')
 <div id="sidebar" class="active">
     <div class="sidebar-wrapper active">
         <div class="sidebar-header position-relative">
@@ -88,7 +90,7 @@
                     </a>
                     <ul class="submenu ">
                         <li class="submenu-item ">
-                            <a href="/pendaftaranmitra">Calon Mitra</a>
+                            <a href="/calonmitra">Calon Mitra</a>
                         </li>
                         <li class="submenu-item ">
                             <a href="extra-component-sweetalert.html">Calon Siswa</a>
@@ -137,3 +139,5 @@
         </div>
     </div>
 </div>
+@endsection
+

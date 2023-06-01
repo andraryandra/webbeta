@@ -11,12 +11,15 @@
     <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/png">
 
     <link rel="stylesheet" href="assets/css/shared/iconly.css">
+    <link rel="stylesheet" href="assets/extensions/simple-datatables/style.css">
+    <link rel="stylesheet" href="assets/css/pages/simple-datatables.css">
 
 </head>
 
 <body>
     <div id="app">
 
+        
         @include('layouts.components_dashboard.sidebar')
 
         <div id="main">
@@ -29,6 +32,8 @@
             <div class="">
                 @yield('content')
                 @yield('user')
+                @yield('mitra')
+                @yield('daftarmitra')
             </div>
 
             @include('layouts.components_dashboard.footer')
@@ -40,6 +45,8 @@
     <!-- Need: Apexcharts -->
     <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
     <script src="assets/js/pages/dashboard.js"></script>
+        <script src="assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+<script src="assets/js/pages/simple-datatables.js"></script>
 
 </body>
 

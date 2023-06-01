@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    // public function daftarmitra()
+    // {
+    //     return view('layouts.partials.daftarmitra');
+    // }
+
     public function detailpartner()
     {
         return view('/detailpartner');
@@ -13,7 +18,7 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('/about');
+        return view('layouts.partials.about');
     }
 
     public function partnership()
@@ -23,11 +28,12 @@ class HomeController extends Controller
 
     public function detailkelas()
     {
-        return view('/detailkelas');
+        return view('layouts.partials.detailkelas');
     }
 
     public function termofservices()
     {
         return view('/termofservices');
     }
+    
 }

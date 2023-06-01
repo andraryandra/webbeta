@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+
+    
     /**
      * Display a listing of the resource.
      *
@@ -43,14 +45,14 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'role' => 'nullable',
+            'role' => 'required',
             'password' => 'required',
         ]);
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'role' => 0,
+            'role' => $request->role,
             'password' => Hash::make($request->password),
         ]);
 
@@ -100,7 +102,7 @@ class UserController extends Controller
         $data = [
             'name' => $request->name,
             'email' => $request->email,
-            'role' => 0,
+            'role' => $request->role,
         ];
 
         if (!empty($request->password)) {

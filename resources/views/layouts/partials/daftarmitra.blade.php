@@ -42,32 +42,51 @@
     @include('layouts.components.header')
     <!--====== Header Ends ======-->
 
-    <section id="about" class="about">
+    <section class="login-register">
         <div class="container">
-    
-            <div class="row">
-                <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
-                    <img src="/assets/img/about.jpg" class="img-fluid" alt="">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="login-register-content">
+                        <h4 class="title">Formulir registrasi pendaftaran mitra sanggar</h4>
+                        <div class="login-register-form">
+                            <form method="POST" action="{{route('mitra.store')}}">
+                                @csrf
+                                <div class="single-form">
+                                    <label>Nama Sanggar</label>
+                                    <input type="text">
+                                </div>
+                                <div class="single-form">
+                                    <label>Email address *</label>
+                                    <input type="email">
+                                </div>
+                                <div class="single-form">
+                                    <label>Password *</label>
+                                    <input type="password">
+                                </div>
+                                <div class="single-form">
+                                    <label>Konfirmasi Password *</label>
+                                    <input type="password">
+                                </div>
+                                <div class="single-form">
+                                    <label>Alamat Sanggar</label>
+                                    <input type="text">
+                                </div>
+                                <div class="single-form">
+                                    <label>Nomor Wa</label>
+                                    <input type="Number">
+                                </div>
+                                <div class="single-form">
+                                    <label>Upload foto tempat sanggar atau dokumentasi kegiatan sanggar</label>
+                                    <input type="file">
+                                </div>
+                                <div class="single-form">
+                                    <button type="submit" class="main-btn main-btn-2">Daftar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
-                    <h1>Profil Kami Batari</h1>
-                    <p>
-                        Batari merupakan singkatan dari Belajar Tari Tradisi, Batari adalah platform belajar kesenian tari
-                        tradisi yang dikembangkan untuk membantu
-                        para pelaku seni maupun calon pelaku seni dalam melestarikan kesenian tradisi di era globalisasi.
-                    </p>
-                    <ul>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.
-                        </li>
-                        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                            aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat
-                            nulla pariatur.</li>
-                    </ul>
-                    <a href="#" class="read-more">Read More <i class="bi bi-long-arrow-right"></i></a>
-                </div>
-            </div>
-    
+            </div>  
         </div>
     </section>
 
@@ -131,6 +150,3 @@
 </body>
 
 </html>
-
-
-
